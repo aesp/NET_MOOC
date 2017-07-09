@@ -1,0 +1,511 @@
+﻿@*@using Microsoft.AspNet.Identity;*@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <title>FINAL</title>
+    <meta name="keywords" content="Nuevas Tendencias Upc" />
+    <meta name="description" content="Nuevas Tendencias Upc ">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="@Url.Content("~/external/slick/slick.css") ">
+    <link rel="stylesheet" href="@Url.Content("~/external/slick/slick-theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/external/magnific-popup/magnific-popup.css")">
+    <link rel="stylesheet" href="@Url.Content("~/external/nouislider/nouislider.css")">
+    <link rel="stylesheet" href="@Url.Content("~/external/bootstrap-select/bootstrap-select.css")">
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/external/rs-plugin/css/settings.css")" media="screen" />
+
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")">
+
+    <link rel="stylesheet" href="@Url.Content("~/font/style.css")">
+
+    <script src="@Url.Content("~/external/modernizr/modernizr.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/angular.js")"></script>
+    <script src="@Url.Content("~/Scripts/angular-cookies.js")"></script>
+    <script src="@Url.Content("~/App/app.js")"></script>
+    <script src="@Url.Content("~/App/Controllers/HomeController.js")"></script>
+</head>
+<body id="bodyView" ng-controller="mainController">
+    <div id="loader-wrapper">
+        <div id="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <!-- Back to top -->
+    <div class="back-to-top"><span class="icon-keyboard_arrow_up"></span></div>
+    <!-- /Back to top -->
+    <!-- mobile menu -->
+    <!-- /mobile menu -->
+    <!-- HEADER section -->
+    <div class="header-wrapper">
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-6 col-xl-7">
+                        <!-- logo start -->
+                        <a href="@Url.Action("Index","Home")"><img  src="@Url.Content("~/images/Logo.jpg")" alt="" /> </a>
+                        <!-- logo end -->
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-5 text-right">
+                        <!-- slogan start -->
+                        @Html.Partial("_LoginPartial")
+                        <!-- slogan end -->
+                        <div class="settings">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stuck-nav">
+                <div class="container offset-top-5">
+                    <div class="row">
+                        <!-- navigation end -->
+                        <div class="pull-right col-sm-3 col-md-3 col-lg-2">
+                            <div class="text-right">
+                                <div class="account link-inline">
+                                    <div class="dropdown text-right">
+                                        <a class="dropdown-toggle" data-toggle="dropdown">
+                                            <span class="icon icon-person "></span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu--xs-full">
+                                            <li><a href="@Url.Action("Login","Account")"><span class="icon icon-lock"></span>Iniciar sesion</a></li>
+                                            <li><a href="@Url.Action("Register","Account")"><span class="icon icon-person_add"></span>Registrarse</a></li>
+                                            <li class="dropdown-menu__close"><a href="#"><span class="icon icon-close"></span>close</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- account menu end -->
+                                <!-- shopping cart start -->
+                                <div class="cart link-inline">
+                                    <div class="dropdown text-right">
+                                        @if (ViewBag.isAdmin != true)
+                                        {
+                                            <a href="@Url.Action("ShoppingCart", "Home")">
+                                                <span class="icon icon-shopping_basket"></span>
+                                                <span id="ShoppingcartNumber" class="badge badge--cart">{{NumberProduct}}</span>
+                                            </a>
+                                        }
+
+                                        <div class="dropdown-menu dropdown-menu--xs-full slide-from-top" role="menu">
+                                            <div class="container">
+                                                <div class="cart__top">Recently added item(s)</div>
+                                                <a href="#" class="icon icon-close cart__close"><span>CLOSE</span></a>
+                                                <ul>
+                                                    <li class="cart__item">
+                                                        <div class="cart__item__image pull-left"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                                                        <div class="cart__item__control">
+                                                            <div class="cart__item__delete"><a href="#" class="icon icon-delete"><span>Delete</span></a></div>
+                                                            <div class="cart__item__edit"><a href="#" class="icon icon-edit"><span>Edit</span></a></div>
+                                                        </div>
+                                                        <div class="cart__item__info">
+                                                            <div class="cart__item__info__title">
+                                                                <h2><a href="#">Quis nostrud exercit ation ullamco</a></h2>
+                                                            </div>
+                                                            <div class="cart__item__info__price"><span class="info-label">Price:</span><span>$84.00</span></div>
+                                                            <div class="cart__item__info__qty"><span class="info-label">Qty:</span><input type="text" class="input--ys" value='1' /></div>
+                                                            <div class="cart__item__info__details">
+                                                                <div class='multitooltip'>
+                                                                    <a href="#">Details</a>
+                                                                    <div class="tip on-bottom">
+                                                                        <span><strong>Color:</strong> Purple</span>
+                                                                        <span><strong>Quantity:</strong> 200</span>
+                                                                        <span><strong>Image:</strong> No</span>
+                                                                        <span><strong>Paper:</strong> Type Linen</span>
+                                                                        <span><strong>Size:</strong> 4"x3.5"</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="cart__item">
+                                                        <div class="cart__item__image pull-left"><a href="#"><img src="@Url.Content("~/images/product/product-2.jpg")" alt="" /></a></div>
+                                                        <div class="cart__item__control">
+                                                            <div class="cart__item__delete"><a href="#" class="icon icon-delete"><span>Delete</span></a></div>
+                                                            <div class="cart__item__edit"><a href="#" class="icon icon-edit"><span>Edit</span></a></div>
+                                                        </div>
+                                                        <div class="cart__item__info">
+                                                            <div class="cart__item__info__title">
+                                                                <h2 class="title-center"><a href="#">Quis nostrud exercit ation ullamco</a></h2>
+                                                            </div>
+                                                            <div class="cart__item__info__price"><span class="info-label">Price:</span><span>$84.00</span></div>
+                                                            <div class="cart__item__info__qty"><span class="info-label">Qty:</span><input type="text" class="input--ys" value='1' /></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="cart__bottom">
+                                                    <div class="cart__total">Cart subtotal: <span> $65.00</span></div>
+                                                    <button class="btn btn--ys btn-checkout">Checkout <span class="icon icon--flippedX icon-reply"></span></button>
+                                                    <a href="#" class="btn btn--ys"><span class="icon icon-shopping_basket"></span> View Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- shopping cart end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- End HEADER section -->
+    @if (ViewBag.Breadcrumb == null)
+    {
+        <!-- breadcrumbs -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <ol class="breadcrumb breadcrumb--ys pull-left">
+                    <li class="home-link"><a href="index.html" class="icon icon-home"></a></li>
+                    @RenderSection("Breadcrumb", false)
+
+                </ol>
+            </div>
+        </div>
+        <!-- /breadcrumbs -->
+    }
+
+
+    @RenderBody()
+    <!-- FOOTER section -->
+    <!-- END FOOTER section -->
+
+
+    <div id="productQuickView" class="white-popup mfp-hide">
+        <h1>Modal dialog</h1>
+        <p>
+            You won't be able to dismiss this by usual means (escape or
+            click button), but you can close it programatically based on
+            user choices or actions.
+        </p>
+    </div>
+    <div id="compareSlide" class="hidden-xs">
+        <div class="container">
+            <div class="compareSlide__top">
+                Compare
+            </div>
+            <a class="compareSlide__close icon icon-close">
+            </a>
+            <div class="compared-product-row">
+                <div class="compared-product">
+                    <a href="#" class="compared-product__delete icon icon-delete"></a>
+                    <div class="compared-product__image"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                    <a href="#" class="compared-product__name">Quis nostrud exercitation ullamco labori.</a>
+                </div>
+                <div class="compared-product">
+                    <a href="#" class="compared-product__delete icon icon-delete"></a>
+                    <div class="compared-product__image"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                    <a href="#" class="compared-product__name">Quis nostrud exercitation ullamco labori.</a>
+                </div>
+                <div class="compared-product">
+                    <a href="#" class="compared-product__delete icon icon-delete"></a>
+                    <div class="compared-product__image"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                    <a href="#" class="compared-product__name">Quis nostrud exercitation ullamco labori.</a>
+                </div>
+                <div class="compared-product">
+                    <a href="#" class="compared-product__delete icon icon-delete"></a>
+                    <div class="compared-product__image"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                    <a href="#" class="compared-product__name">Quis nostrud exercitation ullamco labori.</a>
+                </div>
+                <div class="compared-product">
+                    <a href="#" class="compared-product__delete icon icon-delete"></a>
+                    <div class="compared-product__image"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                    <a href="#" class="compared-product__name">Quis nostrud exercitation ullamco labori.</a>
+                </div>
+                <div class="compared-product">
+                    <a href="#" class="compared-product__delete icon icon-delete"></a>
+                    <div class="compared-product__image"><a href="#"><img src="@Url.Content("~/images/product/product-1.jpg")" alt="" /></a></div>
+                    <a href="#" class="compared-product__name">Quis nostrud exercitation ullamco labori.</a>
+                </div>
+            </div>
+            <div class="compareSlide__bot">
+                <a href="#" class="clear-all icon icon-delete"><span>Clear All</span></a>
+                <a href="#" class="btn btn--ys btn-compare"><span class="icon icon-shopping_basket"></span> Compare</a>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    <!--================== modal ==================-->
+    <!-- modalAddToCart -->
+    <div class="modal  fade" id="modalAddToCart" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog white-modal modal-sm">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        "Mauris lacinia lectus" added to cart successfully!
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <a href="#" class="btn btn--ys btn--full btn--lg">go to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modalAddToCart -->
+    <!-- modalLoginForm-->
+    <div class="modal  fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog white-modal modal-sm">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+                    <h4 class="modal-title text-center text-uppercase">Login form</h4>
+                </div>
+                <form>
+                    <div class="modal-body indent-bot-none">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="icon icon-person"></span>
+                                </span>
+                                <input type="text" id="LoginFormName" class="form-control" placeholder="Name:">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"></span>
+                                <input type="password" id="LoginFormPass" class="form-control" placeholder="Password:">
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="checkBox2">
+                            <label for="checkBox2">
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                Remember me
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn--ys btn--full btn--lg">Login</button>
+                        <div class="divider divider--xs"></div>
+                        <button type="button" class="btn btn--ys btn--full btn--lg btn-blue"><span class="fa fa-facebook"></span> Login with Facebook</button>
+                        <div class="divider divider--xs"></div>
+                        <button type="button" class="btn btn--ys btn--full btn--lg btn-red"><span class="fa fa-google-plus"></span> Login with Google</button>
+                        <div class="divider divider--xs"></div>
+                        <ul class="list-arrow-right">
+                            <li><a href="#">Forgot your username?</a></li>
+                            <li><a href="#">Forgot your password?</a></li>
+                            <li><a href="#">Create an account</a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /modalLoginForm-->
+    <!-- Modal (quickViewModal) -->
+    
+    <!-- / Modal (quickViewModal) -->
+    <!--================== /modal ==================-->
+
+    <script src="@Url.Content("~/external/jquery/jquery-2.1.4.min.js")"></script>
+
+    <script src="@Url.Content("~/js/custom.js")"></script>
+
+
+    <script src="/signalr/hubs"></script>
+    <script>
+    $j(document).ready(function ($) {
+        var mapHub = $.connection.mapHub;
+
+        registerClientMethods(mapHub);
+
+        $.connection.hub.start().done(function () {
+            registerEvents(mapHub)
+        });
+
+    });
+
+    @*function registerEvents(mapHub) {
+
+        if ('@User.Identity.GetUserId()' == '') {
+            angular.element(document.getElementById('bodyView')).scope().removeConectionId();
+        }
+        else {
+            if ('@User.Identity.GetUserId()' != '' && angular.element(document.getElementById('bodyView')).scope().haveConection() == null) {
+                    var ConectionId = mapHub.server.connect('@User.Identity.GetUserId()');
+                }
+
+        }
+    }*@
+
+    function registerClientMethods(mapHub) {
+        mapHub.client.onConnected = function (id, numberProducts) {
+            angular.element(document.getElementById('bodyView')).scope().saveConectionId(id);
+            console.log(id);
+            console.log(id);
+            $j('#ShoppingcartNumber').text(numberProducts);
+        }
+
+        mapHub.client.UpdateShoppingCartNumber = function (number) {
+            $j('#ShoppingcartNumber').text(number);
+        }
+    }
+    </script>
+
+    <script src="@Url.Content("~/external/bootstrap/bootstrap.min.js")"></script>
+
+    <script src="@Url.Content("~/external/slick/slick.min.js")"></script>
+    <script src="@Url.Content("~/external/bootstrap-select/bootstrap-select.min.js")"></script>
+    <script src="@Url.Content("~/external/countdown/jquery.plugin.min.js")"></script>
+    <script src="@Url.Content("~/external/countdown/jquery.countdown.min.js")"></script>
+    <script src="@Url.Content("~/external/instafeed/instafeed.min.js")"></script>
+    <script src="@Url.Content("~/external/magnific-popup/jquery.magnific-popup.min.js")"></script>
+    <script src="@Url.Content("~/external/nouislider/nouislider.min.js")"></script>
+    <script src="@Url.Content("~/external/isotope/isotope.pkgd.min.js")"></script>
+    <script src="@Url.Content("~/external/imagesloaded/imagesloaded.pkgd.min.js")"></script>
+    <script src="@Url.Content("~/external/colorbox/jquery.colorbox-min.js")"></script>
+
+    <script src="@Url.Content("~/external/rs-plugin/js/jquery.themepunch.tools.min.js")"></script>
+    <script src="@Url.Content("~/external/rs-plugin/js/jquery.themepunch.revolution.min.js")"></script>
+
+
+
+
+
+
+
+    <script>
+        $j(document).ready(function () {
+
+
+
+            // Init All Carousel
+            productCarousel($j('#megaMenuCarousel1'), 1, 1, 1, 1, 1);
+            productCarousel($j('#carouselNew'), 2, 2, 3, 2, 1);
+            productCarousel($j('#carouselSale'), 2, 2, 3, 2, 1);
+            productCarousel($j('#postsCarousel'), 2, 3, 3, 2, 1); // 3 - xl, 3 - lg, 3 - md, 2 - sm, 1 - xs
+            mobileOnlyCarousel();
+            bannerCarousel($j('.banner-carousel'));
+            bannerCarousel($j('.category-carousel'));
+            blogCarousel($j('.slider-blog'), 1, 1, 1, 1, 1);
+            brandsCarousel($j('.brands-carousel'));
+
+            // Instagram Feed
+            var feed = new Instafeed({
+                get: 'user',
+                userId: '2324131028',
+                clientId: '422b4d6cf31747f7990a723ca097f64e',
+                limit: 20,
+                sortBy: 'most-liked',
+                resolution: "standard_resolution",
+                accessToken: '2324131028.422b4d6.d6d71d31431a4e8fbf6cb1efa1a2dfdc',
+                template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+            });
+            feed.run();
+
+            // Revolution Slider
+            var windowW = window.innerWidth || $j(window).width();
+            var fullwidth;
+            var fullscreen;
+
+            jQuery(window).resize(sliderOptions);
+            sliderOptions();
+            function sliderOptions() {
+                if (windowW > 767) {
+                    fullwidth = "off";
+                    fullscreen = "on";
+                } else {
+                    fullwidth = "on";
+                    fullscreen = "off";
+                }
+            }
+
+
+
+
+            jQuery('.tp-banner').show().revolution(
+            {
+                dottedOverlay: "none",
+                delay: 16000,
+                startwidth: 2048,
+                startheight: 900,
+                hideThumbs: 200,
+                hideTimerBar: "on",
+
+                thumbWidth: 100,
+                thumbHeight: 50,
+                thumbAmount: 5,
+
+                navigationType: "none",
+                navigationArrows: "",
+                navigationStyle: "",
+
+                touchenabled: "on",
+                onHoverStop: "on",
+
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+
+                parallax: "mouse",
+                parallaxBgFreeze: "on",
+                parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+
+                keyboardNavigation: "off",
+
+                navigationHAlign: "center",
+                navigationVAlign: "bottom",
+                navigationHOffset: 0,
+                navigationVOffset: 20,
+
+                soloArrowLeftHalign: "left",
+                soloArrowLeftValign: "center",
+                soloArrowLeftHOffset: 20,
+                soloArrowLeftVOffset: 0,
+
+                soloArrowRightHalign: "right",
+                soloArrowRightValign: "center",
+                soloArrowRightHOffset: 20,
+                soloArrowRightVOffset: 0,
+
+                shadow: 0,
+                fullWidth: fullwidth,
+                fullScreen: fullscreen,
+
+                spinner: "",
+                h_align: "left",
+
+                stopLoop: "off",
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+
+                shuffle: "off",
+
+                autoHeight: "off",
+                forceFullWidth: "off",
+
+
+                hideThumbsOnMobile: "off",
+                hideNavDelayOnMobile: 1500,
+                hideBulletsOnMobile: "off",
+                hideArrowsOnMobile: "off",
+                hideThumbsUnderResolution: 0,
+
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                startWithSlide: 0,
+                fullScreenOffsetContainer: "#header"
+            });
+        })
+			
+    </script>
+		@RenderSection("Scripts", false)
+</body>
+</html>

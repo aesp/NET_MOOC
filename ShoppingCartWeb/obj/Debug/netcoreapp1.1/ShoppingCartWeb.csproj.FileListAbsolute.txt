@@ -1,0 +1,42 @@
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.deps.json
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.runtimeconfig.json
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.runtimeconfig.dev.json
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.dll
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.pdb
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.AssemblyInfo.cs
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.dll
+C:/Users/Alex/Documents/Visual Studio 2017/Projects/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.pdb
+C:/Users/Alex/documents/visual studio 2017/Projects/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/UserSecretsAssemblyInfo.cs
+C:/Users/Alex/documents/visual studio 2017/Projects/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.csprojResolveAssemblyReference.cache
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.deps.json
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.runtimeconfig.json
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.runtimeconfig.dev.json
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.dll
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.pdb
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.csprojResolveAssemblyReference.cache
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.csproj.CoreCompileInputs.cache
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/UserSecretsAssemblyInfo.cs
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.AssemblyInfo.cs
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.dll
+/Users/brunoaybar/Documents/Development/Personal/NET/ShoppingCart/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.pdb
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.deps.json
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.runtimeconfig.json
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.runtimeconfig.dev.json
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.dll
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/bin/Debug/netcoreapp1.1/ShoppingCartWeb.pdb
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.csprojResolveAssemblyReference.cache
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.csproj.CoreCompileInputs.cache
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/obj/Debug/netcoreapp1.1/UserSecretsAssemblyInfo.cs
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.AssemblyInfo.cs
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.dll
+/Users/fanlat/Personal/Development/net/NET-MOOC/ShoppingCartWeb/obj/Debug/netcoreapp1.1/ShoppingCartWeb.pdb
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\bin\Debug\netcoreapp1.1\ShoppingCartWeb.deps.json
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\bin\Debug\netcoreapp1.1\ShoppingCartWeb.runtimeconfig.json
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\bin\Debug\netcoreapp1.1\ShoppingCartWeb.runtimeconfig.dev.json
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\bin\Debug\netcoreapp1.1\ShoppingCartWeb.dll
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\bin\Debug\netcoreapp1.1\ShoppingCartWeb.pdb
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\obj\Debug\netcoreapp1.1\ShoppingCartWeb.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\obj\Debug\netcoreapp1.1\ShoppingCartWeb.AssemblyInfo.cs
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\obj\Debug\netcoreapp1.1\ShoppingCartWeb.dll
+C:\Users\Alex\Desktop\NET-MOOC-master\ShoppingCartWeb\obj\Debug\netcoreapp1.1\ShoppingCartWeb.pdb

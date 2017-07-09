@@ -1,0 +1,30 @@
+﻿@*@using Microsoft.AspNet.Identity*@
+@using ShoppingCartWeb.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="slogan" style="padding-right:35px">
+            @Html.ActionLink("Hola " + @UserManager.GetUserName(User) + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </div>
+
+        <div class="slogan">
+            <a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
+        </div>
+    }
+}
+else
+{
+    <div class="slogan" style="padding-right:30px">
+        @Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+    </div>
+    <div class="slogan">
+        @Html.ActionLink("Iniciar sesion", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </div>
+}

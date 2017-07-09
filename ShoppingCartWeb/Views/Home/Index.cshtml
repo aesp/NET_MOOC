@@ -1,0 +1,138 @@
+﻿@model System.Collections.Generic.IEnumerable<ShoppingCartWeb.Models.ProductViewModels.ProductViewModel>
+
+    @{
+        ViewBag.Title = "Home Page";
+        ViewBag.Breadcrumb = false;
+    }
+
+    <div id="pageContent" ng-controller="indexController">
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="title-box">
+                            <h2 class="text-center text-uppercase title-under">CURSOS</h2>
+                        </div>
+
+                        <div class="product-listing carousel-products-mobile row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+                                    <div class="product product--zoom">
+                                        <div class="product__inside">
+
+                                            <div class="product__inside__image">
+                                                <a href="#"> <img style="height: 336px;" src="@Url.Content(item.ImageUrl)" alt=""> </a>
+                                                <a href="#" data-toggle="modal" data-target="#quickViewModal" data-id="@item.ProductId" data-title="@item.Name" data-url="@Url.Content(item.ImageUrl)" class="quick-view title-def"><b><span class="icon icon-visibility"></span> Quick view</b> </a>
+                                            </div>
+
+                                            <div class="product__inside__name">
+                                                <h2><a href="#" class="title-def">@item.Name</a></h2>
+                                            </div>
+
+                                            <div class="product__inside__description row-mode-visible"> Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </div>
+
+                                            <div class="product__inside__price price-box">@item.Price.ToString("#.00")</div>
+
+                                            <div class="product__inside__review row-mode-visible">
+                                                <div class="rating row-mode-visible"> <span class="icon-star"></span> <span class="icon-star"></span> <span class="icon-star"></span> <span class="icon-star"></span> <span class="icon-star empty-star"></span> </div>
+                                                <a href="#">1 Review(s)</a> <a href="#">Add Your Review</a>
+                                            </div>
+
+                                            <div class="product__inside__hover">
+
+                                                <div class="product__inside__info">
+                                                    <div class="product__inside__info__btns">
+
+                                                        <a ng-click="addToCart(@item.ProductId)" class="btn btn-def btn--ys btn--xl"><span class="icon icon-shopping_basket"></span> Agregar a carrito</a>
+
+                                                        <a href="#" class="btn btn--ys btn--xl visible-xs"><span class="icon icon-favorite_border"></span></a>
+                                                        <a href="#" class="btn btn--ys btn--xl visible-xs"><span class="icon icon-sort"></span></a>
+                                                        <a href="#" class="btn btn--ys btn--xl  row-mode-visible hidden-xs"><span class="icon icon-visibility"></span> Quick view</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="rating row-mode-hide"> <span class="icon-star"></span> <span class="icon-star"></span> <span class="icon-star"></span> <span class="icon-star"></span> <span class="icon-star empty-star"></span> </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="modal  modal--bg fade" id="quickViewModal">
+                        <div class="modal-dialog white-modal">
+                            <div class="modal-content container">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+                                </div>
+                                <!--  -->
+                                <div class="product-popup">
+                                    <div class="product-popup-content">
+                                        <div class="container-fluid">
+                                            <div class="row product-info-outer">
+                                                <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
+                                                    <div class="product-main-image">
+                                                        <div class="product-main-image__item"><img src='@Url.Content("~/Content/images/Logo.jpg")' alt="" /></div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-info col-xs-12 col-sm-7 col-md-6 col-lg-6">
+                                                    <div class="wrapper">
+                                                        <div class="product-info__sku pull-left">SKU: <strong>mtk012c</strong></div>
+                                                        <div class="product-info__availabilitu pull-right">Disponibilidad:   <strong class="color">En Stock</strong></div>
+                                                    </div>
+                                                    <div class="product-info__title">
+                                                        <h2 id="title-data">Curso online</h2>
+                                                    </div>
+                                                    <div class="price-box product-info__price"><span class="price-box__new">$65.00</span> <span class="price-box__old">$84.00</span></div>
+                                                    <div class="divider divider--xs product-info__divider"></div>
+                                                    <div class="product-info__description">
+                                                        <div class="product-info__description__brand"><img src="@Url.Content("~/Content/images/Logo.jpg")" alt=""> </div>
+                                                        <div class="product-info__description__text">Con este producto no saldra de casa para aprender 😀.</div>
+                                                    </div>
+                                                    <div class="divider divider--xs product-info__divider"></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- / -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css"></script>
+
+<script>
+    var productId;
+    var title;
+    var url;
+    $(document).ready(function () {
+        $(".product__inside__image").click(function () {
+            console.log( $(this).data)
+            var id = $(this).data('id');
+            title = $(this).data('title');
+            url = $(this).data('url');
+
+           // document.getElementById('title-data').innerHTML = id;
+        });
+    });
+
+    function actualizar() {
+        document.getElementById('title-data').innerHTML = title;
+    }
+</script>

@@ -1,0 +1,25 @@
+﻿@model ExternalLoginListViewModel
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@inject SignInManager<ApplicationUser> SignInManager
+<hr />
+<h3 class="color small">INICIA SESIÓN CON:</h3>
+
+@{
+    var loginProviders = SignInManager.GetExternalAuthenticationSchemes().ToList();
+    if (loginProviders.Count() == 0) {
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        <button type="submit" class="socialLoginButton @p.AuthenticationScheme.ToLower()" id="@p.AuthenticationScheme" name="provider" value="@p.AuthenticationScheme" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}
